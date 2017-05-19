@@ -1,0 +1,37 @@
+{
+  "name": "correlate-patch",
+  "version": "1.0.0",
+  "description": "Parses a patch to correlate commits to changes",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "git",
+    "parse",
+    "patch",
+    "diff"
+  ],
+  "author": "Jonathan Skeate",
+  "license": "ISC",
+  "eslintConfig": {
+    "extends": "airbnb-base",
+    "plugins": [
+      "import"
+    ],
+    "rules": {
+      "no-plusplus": 0
+    }
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.2.0",
+    "jest": "^20.0.1",
+    "jest-environment-node-debug": "^2.0.0",
+    "mz": "^2.6.0"
+  },
+  "dependencies": {
+    "git-patch-parser": "^0.2.1"
+  }
+}

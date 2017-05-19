@@ -1,0 +1,31 @@
+From 8b19b6327415d4d2b2dc6ed5a987d8685f8b5c7b Mon Sep 17 00:00:00 2001
+From: Jonathan Skeate <xxxxxx@gmail.com>
+Date: Tue, 16 May 2017 21:16:39 -0400
+Subject: [PATCH] Reverse search
+
+---
+ test.js | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/test.js b/test.js
+index 5b3f6fe..651ef99 100644
+--- a/test.js
++++ b/test.js
+@@ -1,10 +1,11 @@
+ function search(arr, val) {
+-  for (let i = 0; i < arr.length; i++) {
++  let i;
++  for (i = arr.length - 1; i >= 0; i--) {
+     if (arr[i] === val) {
+-      return i;
++      break;
+     }
+   }
+-  return -1;
++  return i;
+ }
+ 
+ module.exports = search;
+-- 
+2.13.0
+

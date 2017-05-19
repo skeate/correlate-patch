@@ -1,0 +1,93 @@
+From 8b19b6327415d4d2b2dc6ed5a987d8685f8b5c7b Mon Sep 17 00:00:00 2001
+From: Jonathan Skeate <xxxxxx@gmail.com>
+Date: Tue, 16 May 2017 21:16:39 -0400
+Subject: [PATCH] Reverse search
+
+---
+ test.js | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/test.js b/test.js
+index 5b3f6fe..651ef99 100644
+--- a/test.js
++++ b/test.js
+@@ -1,10 +1,11 @@
+ function search(arr, val) {
+-  for (let i = 0; i < arr.length; i++) {
++  let i;
++  for (i = arr.length - 1; i >= 0; i--) {
+     if (arr[i] === val) {
+-      return i;
++      break;
+     }
+   }
+-  return -1;
++  return i;
+ }
+ 
+ module.exports = search;
+-- 
+2.13.0
+
+From d95ee564562c5a2fc9aa1345cbeb794d640962cd Mon Sep 17 00:00:00 2001
+From: Jonathan Skeate <skeate@gmail.com>
+Date: Tue, 16 May 2017 22:01:26 -0400
+Subject: [PATCH 2/3] Rename variable
+
+---
+ test.js | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/test.js b/test.js
+index 651ef99..eaccb20 100644
+--- a/test.js
++++ b/test.js
+@@ -1,11 +1,11 @@
+ function search(arr, val) {
+-  let i;
+-  for (i = arr.length - 1; i >= 0; i--) {
+-    if (arr[i] === val) {
++  let j;
++  for (j = arr.length - 1; j >= 0; j--) {
++    if (arr[j] === val) {
+       break;
+     }
+   }
+-  return i;
++  return j;
+ }
+ 
+ module.exports = search;
+-- 
+2.13.0
+
+From 3467806ada06a706e760a6d780678a67e80678d9 Mon Sep 17 00:00:00 2001
+From: Jonathan Skeate <skeate@gmail.com>
+Date: Tue, 16 May 2017 22:01:26 -0400
+Subject: [PATCH 3/3] Rename function
+
+---
+ test.js | 8 ++++----
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/test.js b/test.js
+index 651ef99..eaccb20 100644
+--- a/test.js
++++ b/test.js
+@@ -1,11 +1,11 @@
+-function search(arr, val) {
++function search_reverse(arr, val) {
+   let j;
+   for (j = arr.length - 1; j >= 0; j--) {
+     if (arr[j] === val) {
+       break;
+     }
+   }
+   return j;
+ }
+ 
+-module.exports = search;
++module.exports = search_reverse;
+-- 
+2.13.0
+
