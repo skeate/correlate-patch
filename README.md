@@ -1,4 +1,4 @@
-# patch-correlate
+# correlate-patch
 npm library to correlate commits in a patch to the lines they change
 
 For example, suppose you have a patch file with 3 commits in it, some
