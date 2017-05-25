@@ -11,26 +11,29 @@ test('should correlate a single commit patch', () => fs
     const hash = '8b19b6327415d4d2b2dc6ed5a987d8685f8b5c7b';
     const correlation = correlatePatch(content);
     expect(correlation).toMatchObject({
-      'test.js': {
-        oldLines: [
-          _,
-          hash,
-          _,
-          hash,
-          _,
-          _,
-          hash,
-        ],
-        newLines: [
-          _,
-          [hash],
-          [hash],
-          _,
-          [hash],
-          _,
-          _,
-          [hash],
-        ],
+      commits: [hash],
+      files: {
+        'test.js': {
+          oldLines: [
+            _,
+            hash,
+            _,
+            hash,
+            _,
+            _,
+            hash,
+          ],
+          newLines: [
+            _,
+            [hash],
+            [hash],
+            _,
+            [hash],
+            _,
+            _,
+            [hash],
+          ],
+        },
       },
     });
   }),
@@ -44,33 +47,37 @@ test('should correlate a multi commit patch', () => fs
     const hash3 = '3467806ada06a706e760a6d780678a67e80678d9';
     const correlation = correlatePatch(content);
     expect(correlation).toMatchObject({
-      'test.js': {
-        oldLines: [
-          hash3,
-          hash1,
-          hash2,
-          hash1,
-          _,
-          _,
-          hash1,
-          _,
-          _,
-          hash3,
-          _,
-        ],
-        newLines: [
-          [hash3],
-          [hash2, hash1],
-          [hash2, hash1],
-          [hash2],
-          [hash1],
-          _,
-          _,
-          [hash2, hash1],
-          _,
-          _,
-          [hash3],
-        ],
+      commits: [hash1, hash2, hash3],
+      files: {
+        'test.js': {
+          oldLines: [
+            hash3,
+            hash1,
+            hash2,
+            hash1,
+            _,
+            _,
+            hash1,
+            _,
+            _,
+            hash3,
+            _,
+          ],
+          newLines: [
+            [hash3],
+            [hash2, hash1],
+            [hash2, hash1],
+            [hash2],
+            [hash1],
+            _,
+            _,
+            [hash2, hash1],
+            _,
+            _,
+            [hash3],
+          ],
+        },
+
       },
     });
   }),

@@ -69,7 +69,7 @@ function correlatePatch(patch) {
       files[file].newLines = files[file].newLines.map(unique);
     });
   });
-  return files;
+  return { files, commits: commits.map(c => c.sha) };
 }
 
 module.exports = correlatePatch;
