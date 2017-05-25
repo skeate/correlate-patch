@@ -1,0 +1,7 @@
+node_modules
+index.test.js
+.gitignore
+.travis.yml
+test-files
+.tern-port
+.npmignore
